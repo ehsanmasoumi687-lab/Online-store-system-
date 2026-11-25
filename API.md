@@ -422,3 +422,48 @@ GET /products?sortBy=price&order=asc
 - Limit must be between 1 and 100.
 - Invalid query parameters return 400 Bad Request.
 - Empty product lists return 200 OK with an empty array.
+
+# Authentication & Authorization
+
+## User Roles
+
+Guest:
+- View products
+
+Customer:
+- View products
+- Create orders
+- View own orders
+- Update own profile
+
+Admin:
+- Manage products
+- Manage orders
+- Manage customers
+- View all orders
+
+## Authentication Endpoints
+
+POST /auth/register
+POST /auth/login
+POST /auth/logout
+GET /auth/me
+
+## Authentication Method
+
+Bearer Token
+
+## Authorization Rules
+
+- Guest users can only view products.
+- Customers can manage their own orders.
+- Admins can manage all store resources.
+- Protected endpoints require authentication.
+
+## Security Rules
+
+- Passwords must be stored securely using hashing.
+- Passwords must never be returned in API responses.
+- Access tokens must be validated.
+- Unauthorized requests return 401.
+- Forbidden requests return 403.
