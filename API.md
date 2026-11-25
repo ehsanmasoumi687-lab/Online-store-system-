@@ -175,3 +175,64 @@ DELETE /customers/{id}
 
 اگر سفارش وجود نداشت:
 404 Not Found
+# Customers API
+
+## 1. GET /customers
+
+دریافت لیست مشتریان.
+
+موفق:
+200 OK
+
+## 2. GET /customers/{id}
+
+دریافت اطلاعات یک مشتری.
+
+موفق:
+200 OK
+
+اگر مشتری وجود نداشت:
+404 Not Found
+
+## 3. POST /customers
+
+ثبت مشتری جدید.
+
+اطلاعات ورودی:
+- name
+- email
+- phone
+
+موفق:
+201 Created
+
+اطلاعات اشتباه:
+400 Bad Request
+
+ایمیل تکراری:
+409 Conflict
+
+## 4. PUT /customers/{id}
+
+ویرایش اطلاعات مشتری.
+
+اطلاعات ورودی:
+- name
+- email
+- phone
+
+موفق:
+200 OK
+
+اگر مشتری وجود نداشت:
+404 Not Found
+
+## 5. DELETE /customers/{id}
+
+حذف مشتری.
+
+موفق:
+200 OK
+
+اگر مشتری وجود نداشت:
+404 Not Found
