@@ -236,3 +236,50 @@ DELETE /customers/{id}
 
 اگر مشتری وجود نداشت:
 404 Not Found
+
+# Project Tasks
+
+## Products Tasks
+
+- Add a new product
+- View all products
+- View product details
+- Update product information
+- Delete a product
+
+## Orders Tasks
+
+- Create a new order
+- View all orders
+- View order details
+- Update an order
+- Cancel an order
+
+## Customers Tasks
+
+- Register a new customer
+- View all customers
+- View customer details
+- Update customer information
+- Delete a customer
+
+
+# User Stories
+
+## Products
+
+As a store manager,
+I want to add products,
+so that I can manage store inventory.
+
+## Orders
+
+As a store manager,
+I want to manage customer orders,
+so that I can track sales.
+
+## Customers
+
+As a store manager,
+I want to manage customer information,
+so that I can keep customer records.
