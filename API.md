@@ -344,3 +344,28 @@ Response:
 - Internal server details must not be exposed.
 - Validation errors must identify invalid fields.
 - Every error must return the correct HTTP status code.
+
+# API Headers
+
+## Request Headers
+
+Content-Type: application/json
+Accept: application/json
+Authorization: Bearer TOKEN
+User-Agent: Store-Management-Client
+
+## Response Headers
+
+Content-Type: application/json
+X-RateLimit-Limit
+X-RateLimit-Remaining
+X-RateLimit-Reset
+Retry-After
+
+## Header Rules
+
+- API uses JSON format.
+- Content-Type must be application/json for JSON request bodies.
+- Accept must be application/json.
+- Protected endpoints require Authorization.
+- Rate limit information must be returned in response headers.
