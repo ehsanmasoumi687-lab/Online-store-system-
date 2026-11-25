@@ -315,3 +315,32 @@ Response:
 - X-RateLimit-Remaining
 - X-RateLimit-Reset
 - Retry-After
+# Error Handling
+
+## Standard Error Response
+
+{
+  "status": 404,
+  "error": "PRODUCT_NOT_FOUND",
+  "message": "Product not found",
+  "details": null
+}
+
+## Error Codes
+
+400 - BAD_REQUEST
+401 - UNAUTHORIZED
+403 - FORBIDDEN
+404 - NOT_FOUND
+409 - CONFLICT
+422 - VALIDATION_ERROR
+429 - RATE_LIMIT_EXCEEDED
+500 - INTERNAL_SERVER_ERROR
+
+## Error Handling Rules
+
+- All errors must have a consistent response format.
+- Error messages must be clear.
+- Internal server details must not be exposed.
+- Validation errors must identify invalid fields.
+- Every error must return the correct HTTP status code.
