@@ -1,0 +1,7 @@
+.git
+.github
+README.md
+API.md
+DOCKER.md
+*.log
+.env
