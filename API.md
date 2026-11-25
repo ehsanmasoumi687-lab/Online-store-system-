@@ -283,3 +283,35 @@ so that I can track sales.
 As a store manager,
 I want to manage customer information,
 so that I can keep customer records.
+
+# Rate Limiting & User Quotas
+
+## Guest User
+- Maximum 20 requests per minute
+
+## Normal User
+- Maximum 60 requests per minute
+
+## Admin User
+- Maximum 120 requests per minute
+
+## Rate Limit Response
+
+Status Code:
+429 Too Many Requests
+
+Response:
+
+{
+  "status": 429,
+  "message": "Too many requests",
+  "error": "Rate limit exceeded",
+  "retryAfter": 60
+}
+
+## Rate Limit Headers
+
+- X-RateLimit-Limit
+- X-RateLimit-Remaining
+- X-RateLimit-Reset
+- Retry-After
