@@ -369,3 +369,56 @@ Retry-After
 - Accept must be application/json.
 - Protected endpoints require Authorization.
 - Rate limit information must be returned in response headers.
+# Pagination, Filtering & Sorting
+
+## Pagination
+
+Endpoint:
+GET /products?page=1&limit=10
+
+Parameters:
+- page: Current page number
+- limit: Number of products per page
+
+Default values:
+- page = 1
+- limit = 10
+
+## Filtering
+
+Available filters:
+
+- minPrice: Minimum product price
+- maxPrice: Maximum product price
+- inStock: Product availability
+
+Examples:
+
+GET /products?minPrice=100&maxPrice=500
+
+GET /products?inStock=true
+
+## Sorting
+
+Parameters:
+
+- sortBy: Field to sort by
+- order: asc or desc
+
+Example:
+
+GET /products?sortBy=price&order=asc
+
+## Pagination Response
+
+- currentPage
+- limit
+- totalProducts
+- totalPages
+
+## Rules
+
+- Page must be greater than zero.
+- Limit must be between 1 and 100.
+- Invalid query parameters return 400 Bad Request.
+- Empty product lists return 200 OK with an empty array.
