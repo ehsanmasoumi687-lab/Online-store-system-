@@ -108,3 +108,70 @@ DELETE /customers/{id}
 
 اگر محصول وجود نداشت:
 404 Not Found
+# Orders API
+
+## 1. GET /orders
+
+دریافت لیست سفارش‌ها.
+
+موفق:
+200 OK
+
+اگر سفارشی وجود نداشت:
+404 Not Found
+
+
+## 2. GET /orders/{id}
+
+دریافت یک سفارش مشخص.
+
+موفق:
+200 OK
+
+اگر سفارش وجود نداشت:
+404 Not Found
+
+
+## 3. POST /orders
+
+ایجاد سفارش جدید.
+
+اطلاعات ورودی:
+- customerId
+- productId
+- quantity
+
+موفق:
+201 Created
+
+اطلاعات اشتباه:
+400 Bad Request
+
+اگر محصول وجود نداشت:
+404 Not Found
+
+
+## 4. PUT /orders/{id}
+
+ویرایش سفارش.
+
+اطلاعات ورودی:
+- productId
+- quantity
+
+موفق:
+200 OK
+
+اگر سفارش وجود نداشت:
+404 Not Found
+
+
+## 5. DELETE /orders/{id}
+
+لغو سفارش.
+
+موفق:
+200 OK
+
+اگر سفارش وجود نداشت:
+404 Not Found
